@@ -64,23 +64,19 @@ tmux 듀얼 패널 (조직 현황 + 미션 현황), 5초 자동 갱신.
 
 ## 설치
 
-### 방법 1: 마켓플레이스 등록 + 플러그인 설치 (권장)
+### 방법 1: Claude Code 내 설치 (권장)
 
-```bash
-# Step 1: 리포지토리 클론
-git clone https://github.com/DrFREEST/claude-enterprise-universe.git /opt/claude-enterprise-universe
+Claude Code 실행 후 아래 커맨드를 순서대로 입력하세요:
 
-# Step 2: 마켓플레이스 레지스트리 등록
-mkdir -p ~/.claude/plugins/marketplaces/enterprise-universe/.claude-plugin
-cp /opt/claude-enterprise-universe/.claude-plugin/marketplace.json \
-   ~/.claude/plugins/marketplaces/enterprise-universe/.claude-plugin/marketplace.json
+```
+# Step 1: 마켓플레이스 등록
+/plugin marketplace add https://github.com/DrFREEST/claude-enterprise-universe
 
-# Step 3: 플러그인 파일 동기화
-rsync -av --exclude='.git' --exclude='__pycache__' --exclude='.omc' \
-  /opt/claude-enterprise-universe/ ~/.claude/marketplaces/enterprise-universe/
+# Step 2: 플러그인 설치
+/plugin install enterprise-universe
 ```
 
-### 방법 2: 플러그인 디렉토리 직접 설치
+### 방법 2: Git Clone (수동)
 
 ```bash
 git clone https://github.com/DrFREEST/claude-enterprise-universe.git \
@@ -89,11 +85,8 @@ git clone https://github.com/DrFREEST/claude-enterprise-universe.git \
 
 ### 업데이트
 
-```bash
-# 소스 업데이트 후 마켓플레이스 재동기화
-cd /opt/claude-enterprise-universe && git pull
-rsync -av --exclude='.git' --exclude='__pycache__' --exclude='.omc' \
-  /opt/claude-enterprise-universe/ ~/.claude/marketplaces/enterprise-universe/
+```
+/plugin update enterprise-universe
 ```
 
 설치 후 Claude Code를 재시작하면 `/enterprise`, `/dash-setup` 등 6개 커맨드가 자동 등록됩니다.
