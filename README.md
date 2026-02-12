@@ -84,17 +84,28 @@ cp -r /path/to/claude-enterprise-universe ~/.claude/plugins/enterprise-universe/
 /dash-setup
 
 # 상태 확인
-python3 <plugin-path>/scripts/bootstrap.py status
+/ent-status
 
 # 상태 저장
-python3 <plugin-path>/scripts/bootstrap.py save
+/ent-save
 
 # 인수인계 (세션 종료 전)
-python3 <plugin-path>/scripts/bootstrap.py handoff
+/ent-handoff
 
 # 이전 세션 복원 안내
-python3 <plugin-path>/scripts/bootstrap.py restore
+/ent-restore
 ```
+
+### 커맨드 요약
+
+| 커맨드 | 기능 | 트리거 키워드 |
+|--------|------|-------------|
+| `/enterprise` | 팀 부트스트랩 (C-Suite 9명 스폰) | enterprise, 기업 모드, universe |
+| `/dash-setup` | tmux 실시간 대시보드 자동 세팅 | 대시보드 설정, dashboard setup |
+| `/ent-status` | 현재 팀/태스크/거버넌스 상태 확인 | 팀 상태, enterprise status |
+| `/ent-save` | 팀 상태를 파일로 저장 | 상태 저장, enterprise save |
+| `/ent-handoff` | 인수인계 문서 생성 + 상태 저장 | 인수인계, enterprise handoff |
+| `/ent-restore` | 저장된 세션 복원 안내 | 세션 복원, enterprise restore |
 
 ---
 
