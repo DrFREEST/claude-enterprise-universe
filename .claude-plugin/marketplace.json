@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    {
+      "name": "enterprise-universe",
+      "version": "1.0.0",
+      "description": "AI Enterprise Universe - 5대 원칙 기반 기업 조직 운영 시뮬레이션",
+      "author": {
+        "name": "DrFREEST",
+        "email": "dalkong@dalkong.kr"
+      },
+      "repository": "",
+      "category": "productivity",
+      "tags": ["enterprise", "team", "governance", "organization", "ai-company"],
+      "compatibility": {
+        "claude_code": ">=2.0.0"
+      }
+    }
+  ]
+}

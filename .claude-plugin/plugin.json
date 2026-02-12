@@ -1,0 +1,6 @@
+{
+  "name": "enterprise-universe",
+  "version": "1.0.0",
+  "description": "AI Enterprise Universe - 5대 원칙 기반 기업 조직 운영. C-Suite 9명, 13개 부서 42명.",
+  "skills": "./skills"
+}

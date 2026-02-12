@@ -1,0 +1,23 @@
+{
+  "name": "claude-enterprise-universe",
+  "version": "1.0.0",
+  "description": "AI Enterprise Universe - 5대 원칙 기반 기업 조직 운영 시뮬레이션. Claude Code 플러그인.",
+  "type": "module",
+  "author": "DrFREEST <dalkong@dalkong.kr>",
+  "license": "MIT",
+  "files": [
+    ".claude-plugin/",
+    "config/",
+    "docs/",
+    "scripts/",
+    "skills/",
+    "src/",
+    "CLAUDE.md"
+  ],
+  "scripts": {
+    "status": "python3 scripts/bootstrap.py status",
+    "save": "python3 scripts/bootstrap.py save",
+    "restore": "python3 scripts/bootstrap.py restore",
+    "handoff": "python3 scripts/bootstrap.py handoff"
+  }
+}
