@@ -1,19 +1,24 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "enterprise-universe",
+  "description": "AI Enterprise Universe - 5대 원칙 기반 기업 조직 운영 시뮬레이션",
+  "owner": {
+    "name": "DrFREEST",
+    "email": "dalkong@dalkong.kr"
+  },
   "plugins": [
     {
       "name": "enterprise-universe",
+      "description": "AI 에이전트 기업 조직 운영 - C-Suite 9명, 13개 부서 42명, 5대 원칙 거버넌스, 세션 핸드오프",
       "version": "1.0.0",
-      "description": "AI Enterprise Universe - 5대 원칙 기반 기업 조직 운영 시뮬레이션",
       "author": {
         "name": "DrFREEST",
         "email": "dalkong@dalkong.kr"
       },
-      "repository": "",
+      "source": "./",
       "category": "productivity",
-      "tags": ["enterprise", "team", "governance", "organization", "ai-company"],
-      "compatibility": {
-        "claude_code": ">=2.0.0"
-      }
+      "homepage": "https://github.com/DrFREEST/claude-enterprise-universe",
+      "tags": ["enterprise", "team", "governance", "organization", "ai-company", "simulation"]
     }
   ]
 }
