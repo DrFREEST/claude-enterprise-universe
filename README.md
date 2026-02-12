@@ -64,13 +64,32 @@ tmux 듀얼 패널 (조직 현황 + 미션 현황), 5초 자동 갱신.
 
 ## 설치
 
-```bash
-# 방법 1: Git Clone (권장)
-git clone <repository> ~/.claude/plugins/enterprise-universe/
+### 방법 1: Claude Code 마켓플레이스 (권장)
 
-# 방법 2: 수동 복사
-cp -r /path/to/claude-enterprise-universe ~/.claude/plugins/enterprise-universe/
+```bash
+claude install-plugin DrFREEST/claude-enterprise-universe
 ```
+
+### 방법 2: Git Clone
+
+```bash
+git clone https://github.com/DrFREEST/claude-enterprise-universe.git \
+  ~/.claude/plugins/enterprise-universe/
+```
+
+### 방법 3: 수동 등록
+
+```bash
+# 1. 리포지토리 클론
+git clone https://github.com/DrFREEST/claude-enterprise-universe.git /opt/claude-enterprise-universe
+
+# 2. 마켓플레이스 디렉토리에 심볼릭 링크 또는 복사
+ln -s /opt/claude-enterprise-universe ~/.claude/marketplaces/enterprise-universe
+# 또는
+rsync -av --exclude='.git' /opt/claude-enterprise-universe/ ~/.claude/marketplaces/enterprise-universe/
+```
+
+설치 후 Claude Code를 재시작하면 `/enterprise`, `/dash-setup` 등 커맨드가 자동 등록됩니다.
 
 ---
 
