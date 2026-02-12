@@ -98,6 +98,54 @@ python3 <plugin-path>/scripts/bootstrap.py restore
 
 ---
 
+## 실시간 대시보드
+
+tmux 듀얼 패널 대시보드로 조직 현황과 미션 진행 상태를 실시간 모니터링합니다.
+
+### 자동 세팅
+
+```bash
+/dash-setup
+```
+
+Claude Code에서 위 커맨드를 입력하면 tmux 세션이 자동 생성됩니다.
+
+### 수동 세팅
+
+```bash
+# 세션 생성 + 좌측 패널 (조직 현황)
+tmux new-session -d -s enterprise-dash -x 160 -y 45 \
+  "watch -t -c -n 5 python3 <plugin-path>/scripts/dashboard.sh"
+
+# 우측 패널 (미션 현황)
+tmux split-window -h -t enterprise-dash \
+  "watch -t -c -n 5 python3 <plugin-path>/scripts/tasks-panel.sh"
+
+# 레이아웃 균등 분할
+tmux select-layout -t enterprise-dash even-horizontal
+```
+
+### 대시보드 조작
+
+| 동작 | 명령 |
+|------|------|
+| 연결 | `tmux attach -t enterprise-dash` |
+| 분리 (백그라운드 유지) | `Ctrl+B` -> `D` |
+| 종료 | `tmux kill-session -t enterprise-dash` |
+| 패널 전환 | `Ctrl+B` -> 방향키 |
+
+### 패널 구성
+
+| 패널 | 표시 내용 |
+|------|----------|
+| 좌측 (dashboard.sh) | C-Suite 상태, 부서 현황, 최근 완료 미션 |
+| 우측 (tasks-panel.sh) | 리소스 요약, 활성 미션, 대기 미션 |
+
+갱신 주기: 5초 자동.
+권장 터미널 크기: 140 컬럼 이상.
+
+---
+
 ## 미션 템플릿
 
 | 미션 유형 | 활성화 부서 | 비용 등급 |
